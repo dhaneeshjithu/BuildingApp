@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuildingApp.View.NewEntryView" BackgroundColor="AliceBlue">
+
+    <Grid Padding="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition  Height="150"/>
+          <RowDefinition  Height="50"/>
+          <RowDefinition  Height="50"  />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Text="Select image to upload"   HorizontalOptions="FillAndExpand"></Label>
+        <Button Grid.Column="1" Grid.Row="0" Text="Browse" HeightRequest="30" WidthRequest="120" BackgroundColor="AliceBlue"
+                Command="{Binding BrowseCommand}"></Button>
+       
+        <ListView x:Name="EventListView" ItemsSource="{Binding ImageList,Mode=TwoWay}" Grid.ColumnSpan="2" RowHeight="500" Grid.Row="1" Grid.Column="0" >
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout BackgroundColor="#eee" Orientation="Vertical">
+                  <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" >
+                    <Image Source="{Binding SelectedImage}" HeightRequest="300" WidthRequest="300" />
+                    <Label Text="X" FontSize="20" TextColor="#503026" />
+                  </StackLayout>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      <Frame Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2" OutlineColor="Black" CornerRadius="10">
+      <Editor Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="2"  >
+        
+      </Editor>
+      </Frame>
+      <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center"  VerticalOptions="Center" >
+
+        <Label Text="Review Date" FontSize="25"   Grid.Column="0"    />
+        <DatePicker   />
+
+      </StackLayout>
+      <Button Grid.Row="4" Grid.Column="1" Text="Save"  HeightRequest="50" WidthRequest="120" ></Button>
+      
+
+    </Grid>
+</ContentPage>

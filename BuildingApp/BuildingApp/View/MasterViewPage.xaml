@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuildingApp.View.MasterViewPage" Title="DashBoard"
+                  MasterBehavior="SplitOnPortrait" Icon="Hamburger.png" IsPresented="{Binding IsPresented,Mode=TwoWay}">
+    <!--<MasterDetailPage.ToolbarItems>
+        <ToolbarItem Icon="logout.png" />
+    </MasterDetailPage.ToolbarItems>-->
+    <MasterDetailPage.Master>
+       
+        <ContentPage Title="DashBoard">
+
+           
+            <StackLayout Padding="10" Orientation="Vertical">
+                 
+                    <StackLayout Padding="10">
+                <Label FontSize="Large" Text="New Enty">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding EntryCommand}">
+                                
+                            </TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                </Label>
+                       
+                </StackLayout>
+                <StackLayout HeightRequest="1" BackgroundColor="Gray"/>
+                <StackLayout Padding="10">
+                    <Label  FontSize="Large" Text="All Entries"></Label>
+                </StackLayout>
+                <StackLayout HeightRequest="1" BackgroundColor="Gray"/>
+
+                <StackLayout Padding="10">
+                    <Label  FontSize="Large" Text="Commented By"></Label>
+                    </StackLayout>
+                
+            </StackLayout>
+           
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+      
+           <ContentPage>
+            <ContentPage.Padding>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0,40,0,0" Android="0,40,0,0" />
+            </ContentPage.Padding>
+            <StackLayout Orientation="Horizontal">
+                <Label Text=" A where-would-you-be-without-it handbook covering every single important step in building design and construction,
+                       now updated to include key changes in design and construction practices.
+                       Surveys materials, structures, soil mechanics and foundations, building types,
+                       hardware, insulation, acoustics, plumbing, and more–all the material that will help architects,
+                       engineers, contractors, and others work better, faster, and smarter. Includes new design specifications; 
+                       the latest developments in seismic and wind design criteria; new building systems and material;
+                       updated building codes throughout;
+                       NFPA requirements; and new wood material and codes. "
+                       FontAttributes="None" FontSize="Large" LineBreakMode="WordWrap"  HorizontalOptions="Center" />
+                 
+                </StackLayout>
+            </ContentPage>
+       
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

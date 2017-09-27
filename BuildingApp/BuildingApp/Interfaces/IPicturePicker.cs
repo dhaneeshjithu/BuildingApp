@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BuildingApp.Interfaces
 {
-    public interface IPicturePicker
+    public interface IPicturePicker 
     {
         Task<Stream> GetImageStreamAsync();
     }

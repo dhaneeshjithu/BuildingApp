@@ -17,6 +17,10 @@ namespace BuildingApp.View
             InitializeComponent();
             BindingContext = new Viewmodel.NewEntryViewModel();
         }
-         
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+
+        }
     }
 }

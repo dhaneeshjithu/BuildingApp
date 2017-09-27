@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BuildingApp.View.NewEntryView" BackgroundColor="AliceBlue">
 
-    <Grid Padding="5">
+    <Grid Padding="5" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -26,8 +26,18 @@
               <ViewCell>
                 <StackLayout BackgroundColor="#eee" Orientation="Vertical">
                   <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" >
-                    <Image Source="{Binding SelectedImage}" HeightRequest="300" WidthRequest="300" />
-                    <Label Text="X" FontSize="20" TextColor="#503026" />
+                                <Image Source="icon.png" HeightRequest="300" WidthRequest="300" />
+                    <Label Text="X" FontSize="20" TextColor="#503026"   >
+                     <Label.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                                              Command="{Binding Path=BindingContext.CloseCommand,Source={x:Reference EventListView} }">
+                                            
+                                        </TapGestureRecognizer>
+                      </Label.GestureRecognizers>
+                    </Label>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
                   </StackLayout>
                 </StackLayout>
               </ViewCell>

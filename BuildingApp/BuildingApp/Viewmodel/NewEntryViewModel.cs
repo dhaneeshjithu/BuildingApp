@@ -42,9 +42,15 @@ namespace BuildingApp.Viewmodel
         private RelayCommand _browseCommand;
         private ImageSource _selectedImage;
         private ObservableCollection<ImageSource> _imageList;
+        private RelayCommand _closeCommand;
 
         public RelayCommand BrowseCommand => _browseCommand ?? new RelayCommand(BrowseImage);
+        
+        public RelayCommand CloseCommand => _closeCommand ?? new RelayCommand(RemoveImageFromList);
 
+        private void RemoveImageFromList(object obj)
+        {
+        }
 
         private async void BrowseImage(object obj)
         {
